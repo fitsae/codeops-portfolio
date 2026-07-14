@@ -1,0 +1,5 @@
+Customer Spending Summary
+------------------------------
+Sara: 250.00
+Abel: 200.00
+Mahi: 150.00

@@ -1,0 +1,5 @@
+Abel,120
+Sara,200
+Abel,80
+Mahi,150
+Sara,50
