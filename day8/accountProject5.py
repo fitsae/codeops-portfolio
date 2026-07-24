@@ -53,6 +53,43 @@ class Account:
             return 0
         return 1 + self._count_transactions(transactions[1:])
 
+     def transaction_values(self):
+        """Convert transaction history into numeric values."""
+        values = []
+
+        for transaction in self.transaction_history:
+            amount = transaction.split()[-1]   # +2000 or -1500
+            values.append(float(amount))
+
+        return values
+
+    def best_three_transaction_stretch(self):
+        """Return the highest-sum window of 3 consecutive transactions."""
+        values = self.transaction_values()
+
+        if len(values) < 3:
+            return None, 0
+
+        # Initial window
+        current_sum = sum(values[:3])
+        best_sum = current_sum
+        best_index = 0
+
+        # Slide the window
+        for i in range(3, len(values)):
+            current_sum = current_sum - values[i - 3] + values[i]
+
+            if current_sum > best_sum:
+                best_sum = current_sum
+                best_index = i - 2
+
+        return (
+            self.transaction_history[best_index:best_index + 3],
+            best_sum
+        )
+
+    
+
             
 class SavingAccount(Account):
     def __init__(self, owner, account_number, balance=0, rate=0.05):
@@ -146,6 +183,21 @@ class BankRegistry:
             key=lambda account: account.account_number
         )
         return self.binary_search(sorted_accounts, account_number)
+     def sliding_window_report(self):
+        print("\n=== Best 3-Transaction Stretch ===")
+
+        for account in self.accounts.values():
+            stretch, total = account.best_three_transaction_stretch()
+
+            print(f"\n{account.owner} ({account.account_number})")
+
+            if stretch is None:
+                print("Not enough transactions.")
+            else:
+                print("Transactions:")
+                for t in stretch:
+                    print(" ", t)
+                print(f"Total = {total} ETB")
 
 BankRegistry = BankRegistry()
 acc1 = AccountFactory.create("saving", "Hailu", "1001", 10000)
@@ -183,3 +235,5 @@ else:
 
 print("\nTotal Transactions")
 print(account.owner, "has", account.total_transactions(), "transactions.")
+
+BankRegistry.sliding_window_report()
