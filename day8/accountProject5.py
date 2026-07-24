@@ -53,7 +53,7 @@ class Account:
             return 0
         return 1 + self._count_transactions(transactions[1:])
 
-     def transaction_values(self):
+    def transaction_values(self):
         """Convert transaction history into numeric values."""
         values = []
 
@@ -90,7 +90,6 @@ class Account:
 
     
 
-            
 class SavingAccount(Account):
     def __init__(self, owner, account_number, balance=0, rate=0.05):
         super().__init__(owner, account_number, balance)
@@ -183,7 +182,7 @@ class BankRegistry:
             key=lambda account: account.account_number
         )
         return self.binary_search(sorted_accounts, account_number)
-     def sliding_window_report(self):
+    def sliding_window_report(self):
         print("\n=== Best 3-Transaction Stretch ===")
 
         for account in self.accounts.values():
