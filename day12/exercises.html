@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Day 12 HTML practice including forms, tables, media, accessibility improvements, and semantic HTML."
+    />
+    <title>Day 12 - HTML Forms, Tables, Media & Accessibility</title>
+  </head>
+  <body>
+    <h1>Day 12 HTML Exercises</h1>
+
+    <!-- Task 1: Registration Form -->
+
+    <section>
+      <h2>Ethio Telecom Registration Form</h2>
+
+      <form action="#" method="post">
+        <div>
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" required />
+        </div>
+
+        <br />
+
+        <div>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <br />
+
+        <div>
+          <label for="phone">Telephone (+251XXXXXXXXX)</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="^\+2519\d{8}$"
+            placeholder="+251912345678"
+            required
+          />
+        </div>
+
+        <br />
+
+        <div>
+          <label for="branch">Select Branch</label>
+          <select id="branch" name="branch" required>
+            <option value="">--Choose a Branch--</option>
+            <option>Bole</option>
+            <option>Kazanchis</option>
+            <option>Piassa</option>
+          </select>
+        </div>
+
+        <br />
+
+        <button type="submit">Register</button>
+      </form>
+    </section>
+
+    <hr />
+
+    <!-- Task 2: Ethiopian Airlines Table -->
+
+    <section>
+      <h2>Ethiopian Airlines Flight Schedule</h2>
+
+      <table border="1">
+        <caption>
+          Ethiopian Airlines Available Flights
+        </caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Flight</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Departs</th>
+            <th scope="col">Price (ETB)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>ET101</td>
+            <td>Addis Ababa</td>
+            <td>Hawassa</td>
+            <td>08:00</td>
+            <td>3,500</td>
+          </tr>
+
+          <tr>
+            <td>ET202</td>
+            <td>Addis Ababa</td>
+            <td>Mekelle</td>
+            <td>09:30</td>
+            <td>4,200</td>
+          </tr>
+
+          <tr>
+            <td>ET303</td>
+            <td>Addis Ababa</td>
+            <td>Dire Dawa</td>
+            <td>11:00</td>
+            <td>3,900</td>
+          </tr>
+
+          <tr>
+            <td>ET404</td>
+            <td>Addis Ababa</td>
+            <td>Bahir Dar</td>
+            <td>13:15</td>
+            <td>4,000</td>
+          </tr>
+
+          <tr>
+            <td>ET505</td>
+            <td>Addis Ababa</td>
+            <td>Jimma</td>
+            <td>16:00</td>
+            <td>3,700</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr />
+
+    <!-- Task 3: Media -->
+
+    <section>
+      <h2>Ethiopian Landmark</h2>
+
+      <figure>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Fasil_Ghebbi_Gondar.jpg"
+          alt="Fasil Ghebbi castle complex in Gondar, Ethiopia"
+          width="500"
+        />
+
+        <figcaption>
+          Fasil Ghebbi, the historic castle complex in Gondar.
+        </figcaption>
+      </figure>
+
+      <h3>Map</h3>
+
+      <iframe
+        title="Map showing Addis Ababa"
+        src="https://www.google.com/maps?q=Addis+Ababa&output=embed"
+        width="600"
+        height="450"
+        style="border: 0"
+        loading="lazy"
+      >
+      </iframe>
+    </section>
+
+    <hr />
+
+    <!-- Task 4: Accessibility -->
+
+    <section>
+      <h2>Accessibility Improvements</h2>
+
+      <!--
+        Fix 1:
+        Using a real button gives keyboard support,
+        focus handling and screen-reader identification.
+        -->
+      <button type="button">Submit</button>
+
+      <br /><br />
+
+      <!--
+        Fix 2:
+        A label tells screen readers what the input is for
+        and improves usability.
+        -->
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" />
+
+      <br /><br />
+
+      <!--
+        Fix 3:
+        Alt text describes the image for screen-reader users
+        and when the image cannot load.
+        -->
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/7/71/Coffee_Berries.jpg"
+        alt="Fresh Ethiopian coffee berries on a branch"
+        width="300"
+      />
+    </section>
+  </body>
+</html>
