@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --card-bg: #ffffff;
+  --brand: #0a1f3d;
+  --gold:             
+;
+}
+.menu-card {
+  box-sizing: border-box;
+  width: 320px;
+  padding: 16px;
+  background: var(--card-bg);
+  border: 1px solid #e2e8f0;
+  border-top: 3px solid var(--gold);
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+.menu-card h3 {
+  color: var(--brand);
+}
+.menu-card:hover {
+  border-color: var(--gold);
+}
+.price::before {
+  content: "ETB ";
+}
+tr:nth-child(even) {
+  background-color: black;
+  color: wheat;
+}

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habesha Eatery | Reservation & Menu</title>
+    <meta
+      name="description"
+      content="Reserve a table at Habesha Eatery, browse our traditional Ethiopian menu, and find our location."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>home page</h1>
+    <header>
+      <h1>Habesha Eatery</h1>
+
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="#reservation">Reservation</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="contact.html">Visit Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="reservation">
+        <h2>Reserve a Table</h2>
+
+        <form action="#" method="post">
+          <div>
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              minlength="2"
+              autocomplete="name"
+            />
+          </div>
+
+          <div>
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <div>
+            <label for="tel">Telephone</label>
+            <input
+              type="tel"
+              id="tel"
+              name="tel"
+              required
+              autocomplete="tel"
+              pattern="[0-9+\-\s()]{7,}"
+            />
+          </div>
+
+          <div>
+            <label for="date">Reservation Date</label>
+            <input type="date" id="date" name="date" required />
+          </div>
+
+          <div>
+            <label for="party-size">Party Size</label>
+            <input
+              type="number"
+              id="party-size"
+              name="party-size"
+              min="1"
+              max="20"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="requests">Special Requests</label>
+            <textarea
+              id="requests"
+              name="requests"
+              rows="5"
+              maxlength="500"
+              placeholder="Tell us about allergies, celebrations, seating preferences, etc."
+            ></textarea>
+          </div>
+
+          <button type="submit">Book Reservation</button>
+        </form>
+      </section>
+
+      <section class="menu-card">
+        <h3>Today's Menu</h3>
+
+        <table>
+          <caption>
+            Popular Habesha Eatery Dishes
+          </caption>
+
+          <thead>
+            <tr>
+              <th scope="col">Dish</th>
+              <th scope="col">Description</th>
+              <th scope="col"><span class="price">price</span></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Doro Wat</td>
+              <td>Spicy chicken stew served with injera.</td>
+              <td><span class="price">400 </span></td>
+            </tr>
+
+            <tr>
+              <td>Tibs</td>
+              <td>Sautéed beef with onions, peppers, and spices.</td>
+              <td><span class="price">520</span></td>
+            </tr>
+
+            <tr>
+              <td>Shiro</td>
+              <td>Seasoned chickpea stew with fresh injera.</td>
+              <td><span class="price">300</span></td>
+            </tr>
+
+            <tr>
+              <td>Vegetarian Combo</td>
+              <td>Selection of traditional vegetable dishes.</td>
+              <td><span class="price">380</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="visit">
+        <h2>Visit Us</h2>
+
+        <figure>
+          <img
+            src="images/doro-wat.jpg"
+            alt="Traditional Ethiopian doro wat served on injera with boiled egg and side dishes."
+            width="600"
+            height="400"
+          />
+          <figcaption>One of our signature Ethiopian dishes.</figcaption>
+        </figure>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb="
+          title="Map showing the location of Habesha Eatery"
+          width="600"
+          height="450"
+          style="border: 0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        >
+        </iframe>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Habesha Eatery. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
