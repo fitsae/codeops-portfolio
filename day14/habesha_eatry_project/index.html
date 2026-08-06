@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Habesha Eatery | Reservation & Menu</title>
+
+    <link rel="stylesheet" href="layout.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <!-- HEADER + NAVBAR -->
+      <header>
+        <nav class="navbar">
+          <div class="logo">Habesha Eatery</div>
+
+          <ul class="links">
+            <li>
+              <a href="#reservation"> Reservation </a>
+            </li>
+
+            <li>
+              <a href="#menu"> Menu </a>
+            </li>
+
+            <li>
+              <a href="#visit"> Visit Us </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- MAIN CONTENT -->
+
+      <main>
+        <!-- Reservation Section -->
+
+        <section id="reservation" class="reservation">
+          <h1>Reserve a Table</h1>
+
+          <form>
+            <label>
+              Full Name
+              <input type="text" />
+            </label>
+
+            <label>
+              Email Address
+              <input type="email" />
+            </label>
+
+            <label>
+              Telephone
+              <input type="tel" />
+            </label>
+
+            <label>
+              Reservation Date
+              <input type="date" />
+            </label>
+
+            <label>
+              Party Size
+              <input type="number" />
+            </label>
+
+            <label>
+              Special Requests
+
+              <textarea rows="4"></textarea>
+            </label>
+
+            <button>Book Reservation</button>
+          </form>
+        </section>
+
+        <!-- MENU SECTION -->
+
+        <section id="menu">
+          <h2>Today's Menu</h2>
+
+          <div class="menu-grid">
+            <article class="card popular">
+              <span class="badge"> Popular </span>
+
+              <h3>Doro Wat</h3>
+
+              <p>Spicy chicken stew served with injera.</p>
+
+              <strong> 400 ETB </strong>
+            </article>
+
+            <article class="card">
+              <h3>Tibs</h3>
+
+              <p>Sautéed beef with onions, peppers and spices.</p>
+
+              <strong> 520 ETB </strong>
+            </article>
+
+            <article class="card">
+              <h3>Shiro</h3>
+
+              <p>Seasoned chickpea stew with fresh injera.</p>
+
+              <strong> 300 ETB </strong>
+            </article>
+
+            <article class="card">
+              <h3>Vegetarian Combo</h3>
+
+              <p>Selection of traditional vegetable dishes.</p>
+
+              <strong> 380 ETB </strong>
+            </article>
+          </div>
+        </section>
+
+        <!-- VISIT SECTION -->
+
+        <section id="visit" class="visit">
+          <h2>Visit Us</h2>
+
+          <img src="images/doro-wat.jpg" alt="Traditional Ethiopian food" />
+
+          <p>Find us and enjoy authentic Ethiopian cuisine.</p>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+
+      <footer>
+        <p>© 2026 Habesha Eatery. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,228 @@
+/* RESET */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: #fafafa;
+
+  color: #333;
+}
+
+/* =====================
+PAGE GRID
+===================== */
+
+.page {
+  display: grid;
+
+  grid-template-rows: auto 1fr auto;
+
+  min-height: 100vh;
+}
+
+/* =====================
+NAVBAR FLEXBOX
+===================== */
+
+header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  background: #7b1e1e;
+
+  padding: 20px 40px;
+
+  color: white;
+}
+
+.logo {
+  font-size: 28px;
+
+  font-weight: bold;
+}
+
+.links {
+  display: flex;
+
+  gap: 25px;
+
+  list-style: none;
+}
+
+.links a {
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: bold;
+}
+
+/* =====================
+MAIN
+===================== */
+
+main {
+  padding: 40px;
+}
+
+/* =====================
+FORM
+===================== */
+
+form {
+  display: grid;
+
+  gap: 15px;
+
+  max-width: 500px;
+}
+
+input,
+textarea {
+  width: 100%;
+
+  padding: 10px;
+
+  margin-top: 5px;
+}
+
+button {
+  background: #e67e22;
+
+  color: white;
+
+  border: none;
+
+  padding: 12px;
+
+  cursor: pointer;
+}
+
+/* =====================
+MENU GRID
+===================== */
+
+.menu-grid {
+  display: grid;
+
+  gap: 20px;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* =====================
+CARD FLEXBOX
+===================== */
+
+.card {
+  display: flex;
+
+  flex-direction: column;
+
+  position: relative;
+
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 12px;
+
+  min-height: 220px;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card strong {
+  margin-top: auto;
+
+  color: #7b1e1e;
+
+  font-size: 20px;
+}
+
+/* =====================
+POPULAR BADGE
+===================== */
+
+.badge {
+  position: absolute;
+
+  top: 10px;
+
+  right: 10px;
+
+  background: red;
+
+  color: white;
+
+  padding: 8px 12px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+}
+
+/* =====================
+IMAGE
+===================== */
+
+.visit img {
+  max-width: 600px;
+
+  width: 100%;
+}
+
+/* =====================
+FOOTER
+===================== */
+
+footer {
+  background: #222;
+
+  color: white;
+
+  text-align: center;
+
+  padding: 20px;
+}
+
+/* =====================
+MOBILE RESPONSIVE
+===================== */
+
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .links {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  main {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,276 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+/* =====================
+PAGE GRID
+===================== */
+
+.app {
+  display: grid;
+
+  grid-template-rows: auto 1fr auto;
+
+  min-height: 100vh;
+}
+
+/* =====================
+HEADER
+===================== */
+
+header {
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+
+  background: white;
+}
+
+.navbar {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 20px 60px;
+}
+
+.logo {
+  font-size: 32px;
+
+  font-weight: bold;
+
+  color: #d62828;
+}
+
+.logo span {
+  display: block;
+
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+
+  gap: 25px;
+
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+
+  color: black;
+
+  font-weight: bold;
+}
+
+/* =====================
+HERO SECTION
+===================== */
+
+.hero {
+  min-height: 600px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  padding: 50px;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url("https://picsum.photos/1400/700");
+
+  background-size: cover;
+
+  position: relative;
+}
+
+/* SEARCH CARD */
+
+.search-box {
+  background: white;
+
+  padding: 25px;
+
+  width: 500px;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tabs button {
+  flex: 1;
+
+  padding: 15px;
+
+  border: none;
+}
+
+.search-box h2 {
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+
+  color: #777;
+}
+
+.input {
+  border: 1px solid #ccc;
+
+  padding: 20px;
+
+  margin-bottom: 15px;
+
+  font-size: 20px;
+}
+
+.search-btn {
+  float: right;
+
+  background: #fcb900;
+
+  border: none;
+
+  padding: 15px 30px;
+
+  font-weight: bold;
+}
+
+/* PROMOTION */
+
+.promotion {
+  color: white;
+
+  padding: 40px;
+}
+
+.promotion h1 {
+  font-size: 38px;
+}
+
+.promotion button {
+  margin-top: 20px;
+
+  padding: 15px 50px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #168b35;
+
+  color: white;
+
+  font-size: 18px;
+}
+
+/* ABSOLUTE ELEMENT */
+
+.feedback {
+  position: absolute;
+
+  right: 20px;
+
+  top: 50%;
+
+  background: white;
+
+  padding: 20px 10px;
+
+  writing-mode: vertical-rl;
+
+  border-radius: 20px;
+}
+
+/* =====================
+CARDS GRID
+===================== */
+
+.offers {
+  padding: 40px;
+}
+
+.cards {
+  display: grid;
+
+  gap: 20px;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  background: white;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card h3,
+.card p {
+  padding: 10px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #222;
+
+  color: white;
+
+  text-align: center;
+
+  padding: 25px;
+}
+
+/* =====================
+MOBILE
+===================== */
+
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    padding: 20px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .promotion h1 {
+    font-size: 28px;
+  }
+}
