@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habesha Eatery | Reservation & Menu</title>
+
+    <link rel="stylesheet" href="layout.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <!-- ================= HEADER ================= -->
+
+      <header>
+        <nav class="navbar">
+          <div class="logo">Habesha Eatery</div>
+
+          <ul class="links">
+            <li><a href="#reservation">Reservation</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#visit">Visit Us</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- ================= MAIN ================= -->
+
+      <main>
+        <!-- Reservation -->
+
+        <section id="reservation" class="reservation">
+          <h1>Reserve a Table</h1>
+
+          <form>
+            <label>
+              Full Name
+              <input type="text" placeholder="Enter your full name" required />
+            </label>
+
+            <label>
+              Email Address
+              <input type="email" placeholder="example@email.com" required />
+            </label>
+
+            <label>
+              Telephone
+              <input type="tel" placeholder="+251 9XX XXX XXX" required />
+            </label>
+
+            <label>
+              Reservation Date
+              <input type="date" required />
+            </label>
+
+            <label>
+              Party Size
+              <input type="number" min="1" max="20" value="2" />
+            </label>
+
+            <label>
+              Special Requests
+
+              <textarea
+                rows="4"
+                placeholder="Any dietary requirements or special requests..."
+              ></textarea>
+            </label>
+
+            <button type="submit">Book Reservation</button>
+          </form>
+        </section>
+
+        <!-- ================= MENU ================= -->
+
+        <section id="menu">
+          <h2>Today's Menu</h2>
+
+          <div class="menu-grid">
+            <article class="card popular">
+              <span class="badge"> Popular </span>
+
+              <h3>Doro Wat</h3>
+
+              <p>Traditional spicy chicken stew served with fresh injera.</p>
+
+              <strong>400 ETB</strong>
+            </article>
+
+            <article class="card">
+              <h3>Tibs</h3>
+
+              <p>
+                Sautéed beef with onions, peppers, rosemary, and Ethiopian
+                spices.
+              </p>
+
+              <strong>520 ETB</strong>
+            </article>
+
+            <article class="card">
+              <h3>Shiro</h3>
+
+              <p>
+                Rich chickpea stew seasoned with garlic, onions, and berbere.
+              </p>
+
+              <strong>300 ETB</strong>
+            </article>
+
+            <article class="card">
+              <h3>Vegetarian Combo</h3>
+
+              <p>
+                Delicious assortment of traditional Ethiopian vegetable dishes.
+              </p>
+
+              <strong>380 ETB</strong>
+            </article>
+
+            <article class="card">
+              <h3>Kitfo</h3>
+
+              <p>Minced beef mixed with Ethiopian butter and mitmita spice.</p>
+
+              <strong>600 ETB</strong>
+            </article>
+
+            <article class="card">
+              <h3>Firfir</h3>
+
+              <p>
+                Shredded injera sautéed with berbere sauce and clarified butter.
+              </p>
+
+              <strong>250 ETB</strong>
+            </article>
+          </div>
+        </section>
+
+        <!-- ================= VISIT ================= -->
+
+        <section id="visit" class="visit">
+          <h2>Visit Us</h2>
+
+          <img
+            src="images/habesha_eatery.webp"
+            alt="Traditional Ethiopian food served with injera"
+          />
+
+          <p>
+            Visit Habesha Eatery and enjoy authentic Ethiopian cuisine prepared
+            with fresh ingredients in a warm and welcoming atmosphere.
+          </p>
+        </section>
+      </main>
+
+      <!-- ================= FOOTER ================= -->
+
+      <footer>
+        <p>© 2026 Habesha Eatery. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

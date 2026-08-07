@@ -1,0 +1,333 @@
+/* ===========================
+   RESET
+=========================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fafafa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===========================
+   PAGE LAYOUT
+=========================== */
+
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  background: #7b1e1e;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 20px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.links {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+
+  align-items: center;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #ffd166;
+}
+
+/* ===========================
+   MAIN
+=========================== */
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+h1,
+h2 {
+  margin-bottom: 20px;
+  color: #7b1e1e;
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+form {
+  display: grid;
+  gap: 18px;
+
+  max-width: 550px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+
+  margin-top: 6px;
+
+  padding: 12px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 8px;
+
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background: #e67e22;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 8px;
+
+  padding: 14px;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #cf6d17;
+}
+
+/* ===========================
+   MENU GRID
+   MOBILE FIRST
+=========================== */
+
+.menu-grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 20px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  background: white;
+
+  padding: 24px;
+
+  border-radius: 14px;
+
+  min-height: 220px;
+
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.18);
+}
+
+.card h3 {
+  color: #7b1e1e;
+  margin-bottom: 12px;
+}
+
+.card p {
+  margin-bottom: 20px;
+}
+
+.card strong {
+  margin-top: auto;
+
+  color: #e67e22;
+
+  font-size: 1.2rem;
+}
+
+/* ===========================
+   POPULAR BADGE
+=========================== */
+
+.badge {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  background: crimson;
+
+  color: white;
+
+  padding: 6px 12px;
+
+  border-radius: 30px;
+
+  font-size: 0.8rem;
+
+  font-weight: bold;
+}
+
+/* ===========================
+   VISIT
+=========================== */
+
+.visit img {
+  width: 100%;
+
+  max-width: 700px;
+
+  display: block;
+
+  margin: 20px auto;
+
+  border-radius: 12px;
+}
+
+.visit p {
+  text-align: center;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+
+  padding: 20px;
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+
+    justify-content: space-between;
+  }
+
+  .links {
+    flex-direction: row;
+
+    gap: 25px;
+  }
+
+  main {
+    padding: 40px;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===========================
+   DESKTOP
+=========================== */
+
+@media (min-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===========================
+   ACCESSIBILITY
+=========================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+
+    transition: none !important;
+
+    scroll-behavior: auto !important;
+  }
+
+  .card:hover {
+    transform: none;
+
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+  }
+}
