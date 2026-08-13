@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 19 - JavaScript DOM Exercises</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1 id="title">Original Heading</h1>
+
+    <!-- Exercise 1 -->
+    <section>
+      <h2>Exercise 1: textContent and classList.toggle()</h2>
+      <button id="changeTitle">Change Heading</button>
+    </section>
+
+    <!-- Exercise 2 -->
+    <section>
+      <h2>Exercise 2: Ethiopian Cities</h2>
+      <ul id="cityList"></ul>
+    </section>
+
+    <!-- Exercise 3 -->
+    <section>
+      <h2>Exercise 3: Event Target and Bubbling</h2>
+
+      <div id="bubbleBox">
+        <button id="clickButton">Click Me</button>
+      </div>
+    </section>
+
+    <!-- Exercise 4 -->
+    <section>
+      <h2>Exercise 4: Delete Items</h2>
+
+      <ul id="itemList">
+        <li>
+          Book
+          <button class="delete">Delete</button>
+        </li>
+
+        <li>
+          Laptop
+          <button class="delete">Delete</button>
+        </li>
+
+        <li>
+          Notebook
+          <button class="delete">Delete</button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Exercise 5 -->
+    <section>
+      <h2>Exercise 5: Form Submission</h2>
+
+      <form id="itemForm">
+        <input
+          type="text"
+          id="itemInput"
+          placeholder="Enter an item"
+          required
+        />
+
+        <button type="submit">Add Item</button>
+      </form>
+
+      <ul id="formList"></ul>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
