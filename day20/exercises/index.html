@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Day 20 - Async JavaScript Exercises</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-content">
+        <span class="badge">DAY 20</span>
+
+        <h1>Async JavaScript & APIs</h1>
+
+        <p>Fetch, async/await, error handling and Promise.all</p>
+      </div>
+    </header>
+
+    <main>
+      <!-- =========================
+             EXERCISE 1
+        ========================== -->
+
+      <section class="exercise">
+        <div class="exercise-header">
+          <span class="number">01</span>
+
+          <div>
+            <h2>USD → ETB Exchange Rate</h2>
+
+            <p>
+              Fetch the current USD to Ethiopian Birr rate using async/await.
+            </p>
+          </div>
+        </div>
+
+        <button id="rateBtn">Get USD → ETB Rate</button>
+
+        <div id="rateResult" class="result">
+          Click the button to get the exchange rate.
+        </div>
+      </section>
+
+      <!-- =========================
+             EXERCISE 2
+        ========================== -->
+
+      <section class="exercise">
+        <div class="exercise-header">
+          <span class="number">02</span>
+
+          <div>
+            <h2>Fetch → JSON → Render</h2>
+
+            <p>
+              The old .then() chain rewritten with async/await and try/catch.
+            </p>
+          </div>
+        </div>
+
+        <button id="renderBtn">Load Recipe</button>
+
+        <div id="renderResult" class="result">No recipe loaded yet.</div>
+      </section>
+
+      <!-- =========================
+             EXERCISE 3
+        ========================== -->
+
+      <section class="exercise">
+        <div class="exercise-header">
+          <span class="number">03</span>
+
+          <div>
+            <h2>Network Error vs HTTP 404</h2>
+
+            <p>See why fetch errors and HTTP errors need different handling.</p>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button id="wrongUrlBtn" class="danger-button">Test Wrong URL</button>
+
+          <button id="notFoundBtn" class="warning-button">Test 404</button>
+        </div>
+
+        <div id="errorResult" class="result">Choose a test above.</div>
+      </section>
+
+      <!-- =========================
+             EXERCISE 4
+        ========================== -->
+
+      <section class="exercise">
+        <div class="exercise-header">
+          <span class="number">04</span>
+
+          <div>
+            <h2>Promise.all()</h2>
+
+            <p>
+              Fetch a list and then fetch the details of the first two recipes
+              in parallel.
+            </p>
+          </div>
+        </div>
+
+        <button id="promiseBtn">Fetch First Two Recipes</button>
+
+        <div id="promiseResult" class="recipe-grid"></div>
+      </section>
+
+      <!-- =========================
+             EXERCISE 5
+        ========================== -->
+
+      <section class="exercise exercise-five">
+        <div class="exercise-header">
+          <span class="number">05</span>
+
+          <div>
+            <h2>Loading / Success / Error</h2>
+
+            <p>A complete UI showing all three API states.</p>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button id="liveBtn">Load Live Data</button>
+
+          <button id="simulateErrorBtn" class="danger-button">
+            Simulate Error
+          </button>
+        </div>
+
+        <div class="state-box">
+          <div class="state-item">
+            <span class="state-dot loading-dot"></span>
+
+            <div>
+              <strong>Loading</strong>
+              <p>Waiting for the API...</p>
+            </div>
+          </div>
+
+          <div class="state-item">
+            <span class="state-dot success-dot"></span>
+
+            <div>
+              <strong>Success</strong>
+              <p>Data was fetched successfully.</p>
+            </div>
+          </div>
+
+          <div class="state-item">
+            <span class="state-dot error-dot"></span>
+
+            <div>
+              <strong>Error</strong>
+              <p>The request failed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="statusResult" class="status-result">
+          Choose an option above.
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Day 20 • JavaScript Async / Await Practice</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

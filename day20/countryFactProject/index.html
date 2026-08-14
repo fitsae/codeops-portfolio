@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Country Facts</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero">
+      <div class="hero-content">
+        <span class="badge"> COUNTRY EXPLORER </span>
+
+        <h1>Discover the World 🌍</h1>
+
+        <p>
+          Search for a country and explore its capital, population, region,
+          currency and flag.
+        </p>
+      </div>
+    </header>
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="container">
+      <!-- SEARCH -->
+
+      <section class="search-section">
+        <form id="searchForm">
+          <label for="countryInput"> Search for a country </label>
+
+          <div class="search-box">
+            <input
+              type="text"
+              id="countryInput"
+              value="Ethiopia"
+              placeholder="Example: Ethiopia"
+              autocomplete="off"
+            />
+
+            <button type="submit">Search</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- =========================
+             FACTS OUTPUT
+        ========================== -->
+
+      <section id="facts">
+        <!-- JavaScript will render
+                 loading, success or error here -->
+      </section>
+    </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+      <p>Country data powered by countries.dev</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
