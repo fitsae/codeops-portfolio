@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="top-bar">
+        <h1 id="title">Signup Form</h1>
+
+        <button id="languageToggle" type="button">አማርኛ</button>
+      </div>
+
+      <p id="count">0 people have signed up.</p>
+
+      <form id="signupForm" novalidate>
+        <div class="form-group">
+          <label for="name" id="nameLabel">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phone" id="phoneLabel">Phone</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="09XXXXXXXX or +2519XXXXXXXX"
+          />
+        </div>
+
+        <div id="error" class="error" role="alert" aria-live="polite"></div>
+
+        <button type="submit" id="submitButton">Sign Up</button>
+      </form>
+
+      <p id="success" class="success" aria-live="polite"></p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

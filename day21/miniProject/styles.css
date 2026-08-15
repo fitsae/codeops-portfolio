@@ -1,0 +1,137 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Page */
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  font-family: Arial, sans-serif;
+
+  background-color: #f1f5f9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #1e293b;
+}
+
+/* Main container */
+.container {
+  width: 90%;
+  max-width: 450px;
+
+  background-color: white;
+
+  padding: 30px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h1 {
+  margin-top: 0;
+
+  text-align: center;
+
+  color: #2563eb;
+}
+
+/* Signup counter */
+#signupCount {
+  text-align: center;
+
+  color: #64748b;
+
+  margin-bottom: 25px;
+}
+
+/* Form group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-weight: bold;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+
+  padding: 12px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 6px;
+
+  font-size: 16px;
+}
+
+/* Input focus */
+input:focus {
+  outline: none;
+
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+/* Error message */
+.error {
+  min-height: 25px;
+
+  margin-bottom: 12px;
+
+  color: #dc2626;
+
+  font-weight: bold;
+}
+
+/* Submit button */
+button {
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background-color: #2563eb;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Success message */
+.success {
+  min-height: 25px;
+
+  margin-top: 18px;
+
+  color: #16a34a;
+
+  font-weight: bold;
+
+  text-align: center;
+}
