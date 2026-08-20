@@ -1,0 +1,184 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "type": "income",
+      "category": "Salary",
+      "description": "Monthly salary",
+      "amount": 18000,
+      "date": "2026-08-01",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "id": 2,
+      "type": "expense",
+      "category": "Food",
+      "description": "Weekly groceries",
+      "amount": 1850,
+      "date": "2026-08-02",
+      "paymentMethod": "Cash"
+    },
+    {
+      "id": 3,
+      "type": "expense",
+      "category": "Transportation",
+      "description": "Taxi and transport",
+      "amount": 750,
+      "date": "2026-08-03",
+      "paymentMethod": "Cash"
+    },
+    {
+      "id": 4,
+      "type": "expense",
+      "category": "Internet",
+      "description": "Monthly internet package",
+      "amount": 600,
+      "date": "2026-08-04",
+      "paymentMethod": "Mobile Money"
+    },
+    {
+      "id": 5,
+      "type": "income",
+      "category": "Freelance",
+      "description": "Website development project",
+      "amount": 6500,
+      "date": "2026-08-05",
+      "paymentMethod": "Telebirr"
+    },
+    {
+      "id": 6,
+      "type": "expense",
+      "category": "Utilities",
+      "description": "Electricity bill",
+      "amount": 920,
+      "date": "2026-08-06",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "id": 7,
+      "type": "expense",
+      "category": "Education",
+      "description": "Programming course",
+      "amount": 1200,
+      "date": "2026-08-07",
+      "paymentMethod": "Telebirr"
+    },
+    {
+      "id": 8,
+      "type": "expense",
+      "category": "Food",
+      "description": "Lunch and coffee",
+      "amount": 480,
+      "date": "2026-08-08",
+      "paymentMethod": "Cash"
+    },
+    {
+      "id": 9,
+      "type": "income",
+      "category": "Freelance",
+      "description": "Photography service",
+      "amount": 3500,
+      "date": "2026-08-09",
+      "paymentMethod": "Cash"
+    },
+    {
+      "id": 10,
+      "type": "expense",
+      "category": "Shopping",
+      "description": "Clothing purchase",
+      "amount": 2200,
+      "date": "2026-08-10",
+      "paymentMethod": "Card"
+    },
+    {
+      "id": 11,
+      "type": "expense",
+      "category": "Transportation",
+      "description": "Fuel",
+      "amount": 1400,
+      "date": "2026-08-11",
+      "paymentMethod": "Card"
+    },
+    {
+      "id": 12,
+      "type": "expense",
+      "category": "Entertainment",
+      "description": "Weekend entertainment",
+      "amount": 700,
+      "date": "2026-08-12",
+      "paymentMethod": "Cash"
+    },
+    {
+      "id": 13,
+      "type": "income",
+      "category": "Business",
+      "description": "Small business revenue",
+      "amount": 4200,
+      "date": "2026-08-13",
+      "paymentMethod": "Telebirr"
+    },
+    {
+      "id": 14,
+      "type": "expense",
+      "category": "Health",
+      "description": "Pharmacy expense",
+      "amount": 850,
+      "date": "2026-08-14",
+      "paymentMethod": "Cash"
+    },
+    {
+      "id": 15,
+      "type": "expense",
+      "category": "Food",
+      "description": "Restaurant dinner",
+      "amount": 950,
+      "date": "2026-08-15",
+      "paymentMethod": "Card"
+    },
+    {
+      "id": 16,
+      "type": "expense",
+      "category": "Housing",
+      "description": "Monthly rent",
+      "amount": 6500,
+      "date": "2026-08-16",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "id": 17,
+      "type": "income",
+      "category": "Freelance",
+      "description": "Graphic design project",
+      "amount": 2800,
+      "date": "2026-08-17",
+      "paymentMethod": "Telebirr"
+    },
+    {
+      "id": 18,
+      "type": "expense",
+      "category": "Education",
+      "description": "Books and learning materials",
+      "amount": 900,
+      "date": "2026-08-18",
+      "paymentMethod": "Cash"
+    },
+    {
+      "id": 19,
+      "type": "expense",
+      "category": "Transportation",
+      "description": "Daily transportation",
+      "amount": 650,
+      "date": "2026-08-18",
+      "paymentMethod": "Cash"
+    },
+    {
+      "id": 20,
+      "type": "income",
+      "category": "Other",
+      "description": "Other income",
+      "amount": 1500,
+      "date": "2026-08-19",
+      "paymentMethod": "Cash"
+    }
+  ]
+}
