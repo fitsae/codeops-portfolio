@@ -1,0 +1,1496 @@
+/* =========================================================
+   BIRR BUDGET
+   Traditional Ethiopian Finance Dashboard
+   Modern UI + Ethiopian Cultural Visual Identity
+========================================================= */
+
+/* =========================================================
+   1. CSS VARIABLES
+========================================================= */
+
+:root {
+  /* -------------------------------------------------------
+     Ethiopian Inspired Colors
+  ------------------------------------------------------- */
+
+  --primary: #0f6b45;
+  --primary-dark: #084d32;
+  --primary-light: #dcefe6;
+
+  --income: #16803c;
+  --income-light: #e0f3e6;
+
+  --expense: #b42318;
+  --expense-light: #fbe5e3;
+
+  --warning: #b7791f;
+  --warning-light: #f9edcf;
+
+  /* Ethiopian Gold */
+
+  --gold: #c89b3c;
+  --gold-dark: #9c7425;
+  --gold-light: #f6edcf;
+
+  /* Ethiopian Earth / Coffee */
+
+  --coffee: #6f4e37;
+  --coffee-dark: #4b3425;
+  --coffee-light: #efe5dc;
+
+  --terracotta: #a6533b;
+  --terracotta-light: #f3e1dc;
+
+  /* Background */
+
+  --background: #f7f4ed;
+  --surface: #fffdf8;
+  --surface-hover: #faf6ec;
+
+  /* Text */
+
+  --text-primary: #20251f;
+  --text-secondary: #626b61;
+  --text-muted: #92998f;
+
+  /* Borders */
+
+  --border: #ded8c9;
+  --border-light: #eee9dc;
+
+  /* -------------------------------------------------------
+     Typography
+  ------------------------------------------------------- */
+
+  --font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+
+  /* -------------------------------------------------------
+     Layout
+  ------------------------------------------------------- */
+
+  --container-width: 1200px;
+
+  /* -------------------------------------------------------
+     Radius
+  ------------------------------------------------------- */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  /* -------------------------------------------------------
+     Shadows
+  ------------------------------------------------------- */
+
+  --shadow-sm: 0 1px 3px rgba(62, 48, 28, 0.08);
+
+  --shadow-md: 0 8px 25px rgba(62, 48, 28, 0.1);
+
+  --shadow-lg: 0 20px 50px rgba(62, 48, 28, 0.18);
+
+  /* -------------------------------------------------------
+     Transitions
+  ------------------------------------------------------- */
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+
+/* =========================================================
+   2. DARK MODE
+========================================================= */
+
+[data-theme="dark"] {
+  --primary: #48a878;
+  --primary-dark: #2d8158;
+  --primary-light: #163d2c;
+
+  --income: #4ade80;
+  --income-light: #143b25;
+
+  --expense: #f87171;
+  --expense-light: #451b1b;
+
+  --warning: #e2ad4c;
+  --warning-light: #4a3816;
+
+  --gold: #d8ad50;
+  --gold-dark: #b78931;
+  --gold-light: #443714;
+
+  --coffee: #c49a78;
+  --coffee-dark: #8d6a4e;
+  --coffee-light: #392b20;
+
+  --terracotta: #d47a60;
+  --terracotta-light: #40231d;
+
+  --background: #101814;
+  --surface: #18211c;
+  --surface-hover: #202c25;
+
+  --text-primary: #f5f3e9;
+  --text-secondary: #c5cbbf;
+  --text-muted: #8e978d;
+
+  --border: #344139;
+  --border-light: #28332c;
+}
+
+/* =========================================================
+   3. RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: var(--font-family);
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(200, 155, 60, 0.08),
+      transparent 30%
+    ),
+    var(--background);
+
+  color: var(--text-primary);
+
+  line-height: 1.6;
+
+  transition:
+    background var(--transition-normal),
+    color var(--transition-normal);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================================
+   4. ACCESSIBILITY
+========================================================= */
+
+.sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+
+  border: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* =========================================================
+   5. CONTAINER
+========================================================= */
+
+.container {
+  width: min(calc(100% - 2rem), var(--container-width));
+
+  margin-inline: auto;
+}
+
+/* =========================================================
+   6. ETHIOPIAN DECORATIVE TOP STRIPE
+========================================================= */
+
+.site-header::before {
+  content: "";
+
+  display: block;
+
+  height: 5px;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    var(--primary) 33.33%,
+
+    var(--gold) 33.33%,
+    var(--gold) 66.66%,
+
+    var(--expense) 66.66%,
+    var(--expense) 100%
+  );
+}
+
+/* =========================================================
+   7. HEADER
+========================================================= */
+
+.site-header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
+  background: rgba(255, 253, 248, 0.94);
+
+  border-bottom: 1px solid var(--border);
+
+  box-shadow: var(--shadow-sm);
+
+  backdrop-filter: blur(14px);
+}
+
+[data-theme="dark"] .site-header {
+  background: rgba(24, 33, 28, 0.94);
+}
+
+.header-content {
+  min-height: 72px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+}
+
+/* =========================================================
+   8. BRAND
+========================================================= */
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  transition: transform var(--transition-fast);
+}
+
+.brand:hover {
+  transform: translateY(-1px);
+}
+
+/* Ethiopian-inspired brand symbol */
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+
+  place-items: center;
+
+  position: relative;
+
+  border-radius: 12px;
+
+  background: linear-gradient(145deg, var(--primary), var(--primary-dark));
+
+  color: white;
+
+  font-size: 1.2rem;
+
+  font-weight: 900;
+
+  border: 2px solid var(--gold);
+
+  box-shadow: 0 5px 15px rgba(15, 107, 69, 0.22);
+}
+
+/* Small Ethiopian geometric decoration */
+
+.brand-icon::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 4px;
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  border-radius: 8px;
+
+  pointer-events: none;
+}
+
+.brand strong {
+  display: block;
+
+  font-size: 1.05rem;
+
+  font-weight: 850;
+
+  line-height: 1.2;
+}
+
+.brand small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--text-muted);
+
+  font-size: 0.72rem;
+}
+
+/* =========================================================
+   9. THEME BUTTON
+========================================================= */
+
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  border: 1px solid var(--border);
+
+  border-radius: 50%;
+
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  background: var(--gold-light);
+
+  border-color: var(--gold);
+
+  transform: rotate(10deg);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--gold-light);
+
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   10. MAIN
+========================================================= */
+
+main {
+  padding-block: 2rem 4rem;
+}
+
+/* =========================================================
+   11. PAGE INTRO
+========================================================= */
+
+.page-intro {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.5rem;
+
+  margin-bottom: 2rem;
+
+  position: relative;
+}
+
+/* Decorative Ethiopian line */
+
+.page-intro::after {
+  content: "";
+
+  width: 90px;
+
+  height: 4px;
+
+  position: absolute;
+
+  bottom: -1rem;
+
+  left: 0;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary) 0 33%,
+    var(--gold) 33% 66%,
+    var(--expense) 66% 100%
+  );
+
+  border-radius: 10px;
+}
+
+.eyebrow {
+  margin-bottom: 0.35rem;
+
+  color: var(--primary);
+
+  font-size: 0.72rem;
+
+  font-weight: 850;
+
+  letter-spacing: 0.12em;
+}
+
+.page-intro h1 {
+  font-size: clamp(1.8rem, 5vw, 2.7rem);
+
+  line-height: 1.15;
+
+  letter-spacing: -0.04em;
+}
+
+.page-intro p:not(.eyebrow) {
+  margin-top: 0.5rem;
+
+  color: var(--text-secondary);
+
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   12. BUTTONS
+========================================================= */
+
+.btn {
+  min-height: 44px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  padding: 0.7rem 1rem;
+
+  border: 0;
+
+  border-radius: var(--radius-md);
+
+  font-weight: 750;
+
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--gold-light);
+
+  outline-offset: 2px;
+}
+
+/* Primary */
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+
+  color: white;
+
+  box-shadow: 0 7px 18px rgba(15, 107, 69, 0.22);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 10px 24px rgba(15, 107, 69, 0.3);
+}
+
+/* Secondary */
+
+.btn-secondary {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--surface-hover);
+
+  border-color: var(--gold);
+}
+
+/* =========================================================
+   13. SUMMARY DASHBOARD
+========================================================= */
+
+.summary-grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 1rem;
+
+  margin-bottom: 2.5rem;
+}
+
+.summary-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 1.25rem;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+/* Ethiopian decorative card border */
+
+.summary-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--gold),
+    var(--expense)
+  );
+}
+
+.summary-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-md);
+
+  border-color: var(--gold);
+}
+
+.summary-card-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+}
+
+.summary-label {
+  color: var(--text-secondary);
+
+  font-size: 0.82rem;
+
+  font-weight: 650;
+}
+
+.summary-icon {
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: var(--gold-light);
+
+  color: var(--gold-dark);
+
+  font-size: 1rem;
+}
+
+.summary-value {
+  margin-top: 0.9rem;
+
+  font-size: clamp(1.5rem, 5vw, 2rem);
+
+  font-weight: 850;
+
+  letter-spacing: -0.03em;
+
+  line-height: 1.1;
+}
+
+.summary-description {
+  margin-top: 0.4rem;
+
+  color: var(--text-muted);
+
+  font-size: 0.75rem;
+}
+
+/* Income */
+
+.income-card .summary-icon {
+  background: var(--income-light);
+
+  color: var(--income);
+}
+
+.income-card .summary-value {
+  color: var(--income);
+}
+
+/* Expense */
+
+.expense-card .summary-icon {
+  background: var(--expense-light);
+
+  color: var(--expense);
+}
+
+.expense-card .summary-value {
+  color: var(--expense);
+}
+
+/* =========================================================
+   14. TRANSACTION SECTION
+========================================================= */
+
+.transactions-section {
+  padding: 1.25rem;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  position: relative;
+}
+
+/* Ethiopian-inspired section decoration */
+
+.transactions-section::before {
+  content: "◆ ◆ ◆";
+
+  position: absolute;
+
+  top: -11px;
+
+  left: 20px;
+
+  padding-inline: 8px;
+
+  background: var(--background);
+
+  color: var(--gold);
+
+  font-size: 9px;
+
+  letter-spacing: 5px;
+}
+
+.section-header {
+  margin-bottom: 1.25rem;
+}
+
+.section-header h2 {
+  font-size: 1.35rem;
+
+  line-height: 1.2;
+}
+
+/* =========================================================
+   15. SEARCH + FILTERS
+========================================================= */
+
+.transaction-controls {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 0.75rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.search-wrapper {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+
+  top: 50%;
+  left: 0.9rem;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+
+  font-size: 0.9rem;
+}
+
+.search-input {
+  width: 100%;
+
+  min-height: 46px;
+
+  padding: 0.7rem 1rem 0.7rem 2.7rem;
+
+  background: var(--background);
+
+  color: var(--text-primary);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-md);
+
+  outline: none;
+
+  transition:
+    border var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* Filters */
+
+.filter-wrapper {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.35rem;
+}
+
+.filter-wrapper label {
+  color: var(--text-secondary);
+
+  font-size: 0.72rem;
+
+  font-weight: 750;
+}
+
+.filter-wrapper select {
+  width: 100%;
+
+  min-height: 46px;
+
+  padding: 0.7rem 0.8rem;
+
+  background: var(--background);
+
+  color: var(--text-primary);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-md);
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition:
+    border var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.filter-wrapper select:focus {
+  border-color: var(--primary);
+
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* =========================================================
+   16. TRANSACTION LIST
+========================================================= */
+
+.transaction-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.75rem;
+}
+
+.transaction-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.85rem;
+
+  padding: 1rem;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-md);
+
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.transaction-item:hover {
+  background: var(--surface-hover);
+
+  transform: translateY(-1px);
+
+  box-shadow: var(--shadow-sm);
+}
+
+/* Transaction icon */
+
+.transaction-icon {
+  flex: 0 0 auto;
+
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: var(--gold-light);
+
+  color: var(--gold-dark);
+
+  font-size: 1rem;
+
+  border: 1px solid rgba(200, 155, 60, 0.2);
+}
+
+.transaction-icon.income {
+  background: var(--income-light);
+
+  color: var(--income);
+}
+
+.transaction-icon.expense {
+  background: var(--expense-light);
+
+  color: var(--expense);
+}
+
+/* Information */
+
+.transaction-info {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.transaction-title {
+  overflow: hidden;
+
+  color: var(--text-primary);
+
+  font-size: 0.92rem;
+
+  font-weight: 750;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.transaction-meta {
+  margin-top: 0.15rem;
+
+  color: var(--text-muted);
+
+  font-size: 0.72rem;
+}
+
+/* Amount */
+
+.transaction-right {
+  flex: 0 0 auto;
+
+  text-align: right;
+}
+
+.transaction-amount {
+  font-size: 0.9rem;
+
+  font-weight: 850;
+}
+
+.transaction-amount.income {
+  color: var(--income);
+}
+
+.transaction-amount.expense {
+  color: var(--expense);
+}
+
+.transaction-date {
+  margin-top: 0.15rem;
+
+  color: var(--text-muted);
+
+  font-size: 0.7rem;
+}
+
+/* Actions */
+
+.transaction-actions {
+  display: flex;
+
+  gap: 0.3rem;
+
+  margin-top: 0.5rem;
+}
+
+.action-btn {
+  min-width: 34px;
+  min-height: 34px;
+
+  display: inline-grid;
+
+  place-items: center;
+
+  padding: 0;
+
+  background: transparent;
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
+
+  color: var(--text-secondary);
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.action-btn:hover {
+  background: var(--gold-light);
+
+  color: var(--gold-dark);
+
+  border-color: var(--gold);
+}
+
+.action-btn.delete:hover {
+  background: var(--expense-light);
+
+  color: var(--expense);
+
+  border-color: transparent;
+}
+
+/* =========================================================
+   17. STATES
+========================================================= */
+
+.state-message {
+  min-height: 220px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  padding: 2rem;
+
+  text-align: center;
+
+  color: var(--text-secondary);
+}
+
+.state-message h3 {
+  color: var(--text-primary);
+
+  font-size: 1rem;
+}
+
+.state-message p {
+  max-width: 400px;
+
+  color: var(--text-muted);
+
+  font-size: 0.85rem;
+}
+
+.empty-icon {
+  font-size: 2.5rem;
+
+  margin-bottom: 0.5rem;
+}
+
+/* Loading */
+
+.loading-spinner {
+  width: 30px;
+  height: 30px;
+
+  border: 3px solid var(--border);
+
+  border-top-color: var(--primary);
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error */
+
+.error-state > span {
+  font-size: 2rem;
+}
+
+.error-state {
+  color: var(--expense);
+}
+
+/* =========================================================
+   18. MODAL
+========================================================= */
+
+.transaction-modal {
+  width: min(calc(100% - 2rem), 560px);
+
+  max-height: calc(100vh - 2rem);
+
+  padding: 0;
+
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border: 1px solid var(--gold);
+
+  border-radius: var(--radius-xl);
+
+  box-shadow: var(--shadow-lg);
+
+  overflow: auto;
+}
+
+.transaction-modal::backdrop {
+  background: rgba(25, 20, 10, 0.62);
+
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  padding: 1.25rem;
+}
+
+.modal-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+  font-size: 1.35rem;
+
+  line-height: 1.2;
+}
+
+.modal-close {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  flex: 0 0 auto;
+
+  background: transparent;
+
+  border: 1px solid var(--border);
+
+  border-radius: 50%;
+
+  color: var(--text-secondary);
+
+  font-size: 1.4rem;
+
+  line-height: 1;
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.modal-close:hover {
+  background: var(--gold-light);
+
+  color: var(--gold-dark);
+}
+
+/* =========================================================
+   19. FORM
+========================================================= */
+
+#transactionForm {
+  display: grid;
+
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.4rem;
+}
+
+.form-group label {
+  color: var(--text-primary);
+
+  font-size: 0.8rem;
+
+  font-weight: 750;
+}
+
+.form-group label span {
+  color: var(--text-muted);
+
+  font-weight: 400;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  padding: 0.75rem 0.85rem;
+
+  background: var(--background);
+
+  color: var(--text-primary);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-md);
+
+  outline: none;
+
+  transition:
+    border var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.form-group input,
+.form-group select {
+  min-height: 46px;
+}
+
+.form-group textarea {
+  resize: vertical;
+
+  min-height: 90px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.form-error {
+  min-height: 16px;
+
+  color: var(--expense);
+
+  font-size: 0.72rem;
+}
+
+/* Invalid */
+
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+  border-color: var(--expense);
+
+  box-shadow: 0 0 0 3px var(--expense-light);
+}
+
+/* Form actions */
+
+.form-actions {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 0.75rem;
+
+  margin-top: 0.5rem;
+}
+
+.form-actions .btn {
+  width: 100%;
+}
+
+/* =========================================================
+   20. FOOTER
+========================================================= */
+
+.site-footer {
+  position: relative;
+
+  padding-block: 1.5rem;
+
+  border-top: 1px solid var(--border);
+
+  color: var(--text-muted);
+
+  font-size: 0.75rem;
+
+  text-align: center;
+}
+
+/* Ethiopian decorative footer stripe */
+
+.site-footer::before {
+  content: "";
+
+  display: block;
+
+  width: 120px;
+
+  height: 3px;
+
+  margin: 0 auto 1rem;
+
+  background: linear-gradient(
+    90deg,
+    var(--expense),
+    var(--gold),
+    var(--primary)
+  );
+
+  border-radius: 10px;
+}
+
+.site-footer p + p {
+  margin-top: 0.2rem;
+}
+
+/* =========================================================
+   21. TABLET — 600px+
+========================================================= */
+
+@media (min-width: 600px) {
+  main {
+    padding-block: 2.5rem 5rem;
+  }
+
+  .page-intro {
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+  }
+
+  .page-intro .btn {
+    flex: 0 0 auto;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .transactions-section {
+    padding: 1.5rem;
+  }
+
+  .transaction-controls {
+    grid-template-columns:
+      minmax(220px, 2fr)
+      repeat(3, minmax(130px, 1fr));
+  }
+
+  .form-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .modal-content {
+    padding: 1.75rem;
+  }
+}
+
+/* =========================================================
+   22. DESKTOP — 900px+
+========================================================= */
+
+@media (min-width: 900px) {
+  .summary-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .summary-card {
+    padding: 1.4rem;
+  }
+
+  .transactions-section {
+    padding: 1.75rem;
+  }
+
+  .transaction-item {
+    padding: 1.1rem 1.2rem;
+  }
+
+  .transaction-actions {
+    margin-top: 0;
+
+    opacity: 0;
+
+    transition: opacity var(--transition-fast);
+  }
+
+  .transaction-item:hover .transaction-actions,
+  .transaction-item:focus-within .transaction-actions {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   23. LARGE DESKTOP — 1200px+
+========================================================= */
+
+@media (min-width: 1200px) {
+  .container {
+    width: min(calc(100% - 4rem), var(--container-width));
+  }
+
+  main {
+    padding-block: 3rem 5rem;
+  }
+
+  .page-intro {
+    margin-bottom: 2.5rem;
+  }
+
+  .summary-grid {
+    gap: 1.25rem;
+  }
+
+  .transaction-list {
+    gap: 0.85rem;
+  }
+}
+
+/* =========================================================
+   24. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
