@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Birr Budget - A simple personal finance tracker for managing income and expenses in Ethiopian Birr."
+    />
+
+    <title>Birr Budget | Ethiopian Personal Finance</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="site-header">
+      <div class="container header-content">
+        <a href="#" class="brand" aria-label="Birr Budget home">
+          <span class="brand-icon" aria-hidden="true">Br</span>
+
+          <span>
+            <strong>Birr Budget</strong>
+            <small>የግል የገንዘብ አስተዳደር</small>
+          </span>
+        </a>
+
+        <button
+          type="button"
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Toggle dark mode"
+        >
+          🌙
+        </button>
+      </div>
+    </header>
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+    <main class="container">
+      <!-- Page introduction -->
+      <section class="page-intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">የእኔ ገንዘብ · MY FINANCES</p>
+
+          <h1 id="page-title">Track your Birr</h1>
+
+          <p>
+            ገቢዎን እና ወጪዎን በቀላሉ ይቆጣጠሩ። Manage your income and expenses in
+            Ethiopian Birr.
+          </p>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="openTransactionModal">
+          <span aria-hidden="true">+</span>
+          Add Transaction
+        </button>
+      </section>
+
+      <!-- =========================
+             DASHBOARD SUMMARY
+        ========================== -->
+      <section class="summary-grid" aria-label="Financial summary">
+        <!-- Balance -->
+        <article class="summary-card balance-card">
+          <div class="summary-card-header">
+            <span class="summary-label"> Total Balance · ጠቅላላ ቀሪ ሂሳብ </span>
+
+            <span class="summary-icon" aria-hidden="true">💰</span>
+          </div>
+
+          <p class="summary-value" id="totalBalance">0 ETB</p>
+
+          <p class="summary-description">
+            Your current Birr balance · የአሁኑ ቀሪ ሂሳብ
+          </p>
+        </article>
+
+        <!-- Income -->
+        <article class="summary-card income-card">
+          <div class="summary-card-header">
+            <span class="summary-label"> Total Income · ጠቅላላ ገቢ </span>
+
+            <span class="summary-icon" aria-hidden="true">↗</span>
+          </div>
+
+          <p class="summary-value" id="totalIncome">0 ETB</p>
+
+          <p class="summary-description">Money received · የተቀበሉት ገንዘብ</p>
+        </article>
+
+        <!-- Expenses -->
+        <article class="summary-card expense-card">
+          <div class="summary-card-header">
+            <span class="summary-label"> Total Expenses · ጠቅላላ ወጪ </span>
+
+            <span class="summary-icon" aria-hidden="true">↘</span>
+          </div>
+
+          <p class="summary-value" id="totalExpenses">0 ETB</p>
+
+          <p class="summary-description">Money spent · ያወጡት ገንዘብ</p>
+        </article>
+
+        <!-- Transactions -->
+        <article class="summary-card">
+          <div class="summary-card-header">
+            <span class="summary-label"> Transactions · ግብይቶች </span>
+
+            <span class="summary-icon" aria-hidden="true">📊</span>
+          </div>
+
+          <p class="summary-value" id="transactionCount">0</p>
+
+          <p class="summary-description">
+            Recorded transactions · የተመዘገቡ ግብይቶች
+          </p>
+        </article>
+      </section>
+
+      <!-- =========================
+             TRANSACTION SECTION
+        ========================== -->
+      <section
+        class="transactions-section"
+        aria-labelledby="transactions-title"
+      >
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">ACTIVITY · የገንዘብ እንቅስቃሴ</p>
+
+            <h2 id="transactions-title">Transactions</h2>
+          </div>
+        </div>
+
+        <!-- =========================
+                 SEARCH + FILTERS
+            ========================== -->
+        <div class="transaction-controls">
+          <!-- Search -->
+          <div class="search-wrapper">
+            <label for="searchInput" class="sr-only">
+              Search transactions
+            </label>
+
+            <span class="search-icon" aria-hidden="true">🔎</span>
+
+            <input
+              type="search"
+              id="searchInput"
+              class="search-input"
+              placeholder="Search transactions..."
+              autocomplete="off"
+            />
+          </div>
+
+          <!-- Type filter -->
+          <div class="filter-wrapper">
+            <label for="typeFilter">Type · አይነት</label>
+
+            <select id="typeFilter">
+              <option value="all">All · ሁሉም</option>
+
+              <option value="income">Income · ገቢ</option>
+
+              <option value="expense">Expenses · ወጪ</option>
+            </select>
+          </div>
+
+          <!-- Category filter -->
+          <div class="filter-wrapper">
+            <label for="categoryFilter"> Category · ምድብ </label>
+
+            <select id="categoryFilter">
+              <option value="all">All Categories · ሁሉም ምድቦች</option>
+
+              <option value="Salary">Salary · ደመወዝ</option>
+
+              <option value="Freelance">Freelance · ፍሪላንስ</option>
+
+              <option value="Food">Food · ምግብ</option>
+
+              <option value="Transport">Transport · መጓጓዣ</option>
+
+              <option value="Education">Education · ትምህርት</option>
+
+              <option value="Bills">Bills · የአገልግሎት ክፍያ</option>
+
+              <option value="Shopping">Shopping · ግዢ</option>
+
+              <option value="Other">Other · ሌላ</option>
+            </select>
+          </div>
+
+          <!-- Sort -->
+          <div class="filter-wrapper">
+            <label for="sortFilter">Sort · ደርድር</label>
+
+            <select id="sortFilter">
+              <option value="newest">Newest · አዲስ</option>
+
+              <option value="oldest">Oldest · አሮጌ</option>
+
+              <option value="highest">Highest Amount · ከፍተኛ መጠን</option>
+
+              <option value="lowest">Lowest Amount · ዝቅተኛ መጠን</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- =========================
+                 LOADING STATE
+            ========================== -->
+        <div class="state-message" id="loadingState" aria-live="polite">
+          <span class="loading-spinner" aria-hidden="true"></span>
+
+          <p>Loading your Birr transactions...</p>
+        </div>
+
+        <!-- =========================
+                 ERROR STATE
+            ========================== -->
+        <div
+          class="state-message error-state hidden"
+          id="errorState"
+          role="alert"
+        >
+          <span aria-hidden="true">⚠️</span>
+
+          <h3>Unable to load transactions</h3>
+
+          <p>Something went wrong while loading your Birr Budget data.</p>
+
+          <button type="button" class="btn btn-secondary" id="retryButton">
+            Try Again · እንደገና ሞክር
+          </button>
+        </div>
+
+        <!-- =========================
+                 EMPTY STATE
+            ========================== -->
+        <div class="state-message hidden" id="emptyState">
+          <span class="empty-icon" aria-hidden="true">💸</span>
+
+          <h3>No transactions found</h3>
+
+          <p>ምንም የገንዘብ ግብይት አልተገኘም። Try changing your search or filters.</p>
+        </div>
+
+        <!-- =========================
+                 TRANSACTION LIST
+            ========================== -->
+        <div
+          class="transaction-list"
+          id="transactionList"
+          aria-live="polite"
+          aria-label="Transaction list"
+        >
+          <!-- JavaScript will render transactions here -->
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================
+         ADD / EDIT MODAL
+    ========================== -->
+    <dialog class="transaction-modal" id="transactionModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow">TRANSACTION · ግብይት</p>
+
+            <h2 id="modalTitle">Add Transaction</h2>
+          </div>
+
+          <button
+            type="button"
+            class="modal-close"
+            id="closeTransactionModal"
+            aria-label="Close transaction form"
+          >
+            ×
+          </button>
+        </div>
+
+        <!-- Form -->
+        <form id="transactionForm" novalidate>
+          <!-- Title -->
+          <div class="form-group">
+            <label for="transactionTitle"> Title · ርዕስ </label>
+
+            <input
+              type="text"
+              id="transactionTitle"
+              name="title"
+              placeholder="e.g. Monthly Salary · ወርሃዊ ደመወዝ"
+              required
+            />
+
+            <small class="form-error" id="titleError"></small>
+          </div>
+
+          <!-- Amount -->
+          <div class="form-group">
+            <label for="transactionAmount"> Amount (ETB) · መጠን </label>
+
+            <input
+              type="number"
+              id="transactionAmount"
+              name="amount"
+              placeholder="e.g. 5,000"
+              min="0.01"
+              step="0.01"
+              required
+            />
+
+            <small class="form-error" id="amountError"></small>
+          </div>
+
+          <!-- Type -->
+          <div class="form-group">
+            <label for="transactionType"> Type · አይነት </label>
+
+            <select id="transactionType" name="type" required>
+              <option value="">Select type · አይነት ይምረጡ</option>
+
+              <option value="income">Income · ገቢ</option>
+
+              <option value="expense">Expense · ወጪ</option>
+            </select>
+
+            <small class="form-error" id="typeError"></small>
+          </div>
+
+          <!-- Category -->
+          <div class="form-group">
+            <label for="transactionCategory"> Category · ምድብ </label>
+
+            <select id="transactionCategory" name="category" required>
+              <option value="">Select category · ምድብ ይምረጡ</option>
+
+              <option value="Salary">Salary · ደመወዝ</option>
+
+              <option value="Freelance">Freelance · ፍሪላንስ</option>
+
+              <option value="Food">Food · ምግብ</option>
+
+              <option value="Transport">Transport · መጓጓዣ</option>
+
+              <option value="Education">Education · ትምህርት</option>
+
+              <option value="Bills">Bills · የአገልግሎት ክፍያ</option>
+
+              <option value="Shopping">Shopping · ግዢ</option>
+
+              <option value="Other">Other · ሌላ</option>
+            </select>
+
+            <small class="form-error" id="categoryError"></small>
+          </div>
+
+          <!-- Date -->
+          <div class="form-group">
+            <label for="transactionDate"> Date · ቀን </label>
+
+            <input type="date" id="transactionDate" name="date" required />
+
+            <small class="form-error" id="dateError"></small>
+          </div>
+
+          <!-- Description -->
+          <div class="form-group">
+            <label for="transactionDescription">
+              Description
+              <span>(Optional · አማራጭ)</span>
+            </label>
+
+            <textarea
+              id="transactionDescription"
+              name="description"
+              rows="3"
+              placeholder="Add a short description... · አጭር መግለጫ ያስገቡ..."
+            ></textarea>
+          </div>
+
+          <!-- Form actions -->
+          <div class="form-actions">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="cancelTransaction"
+            >
+              Cancel · ሰርዝ
+            </button>
+
+            <button type="submit" class="btn btn-primary">
+              Save Transaction · አስቀምጥ
+            </button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 Birr Budget · ብር ባጀት</p>
+
+        <p>
+          Personal Finance Tracker · Ethiopian Birr (ETB) · የግል የገንዘብ አስተዳደር
+        </p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="app.js" defer></script>
+  </body>
+</html>
