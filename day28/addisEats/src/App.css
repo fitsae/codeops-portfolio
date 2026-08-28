@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+}
+
+.header {
+  text-align: center;
+  padding: 30px 20px;
+  background: #222;
+  color: white;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+}
+
+.header p {
+  margin: 0;
+}
+
+.container {
+  width: min(100% - 40px, 900px);
+  margin: 40px auto;
+}
+
+.menu,
+.delivery {
+  background: white;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.category-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.category-chip {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+}
+
+.category-chip:hover {
+  background: #eee;
+}
+
+.category-chip.selected {
+  background: #222;
+  color: white;
+}
+
+.dish-list {
+  display: grid;
+  gap: 15px;
+}
+
+.dish {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.dish h3 {
+  margin: 0 0 8px;
+}
+
+.price {
+  margin: 0 0 8px;
+  font-weight: bold;
+}
+
+.dish button,
+.delivery button {
+  padding: 9px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #222;
+  color: white;
+  cursor: pointer;
+}
+
+.dish button:hover,
+.delivery button:hover {
+  opacity: 0.85;
+}
+
+.spicy {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #f0f0f0;
+  font-size: 12px;
+}
+
+.quantity {
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
+.order-total {
+  margin-top: 25px;
+  padding: 15px;
+  border-top: 2px solid #ddd;
+}
+
+.delivery form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-group {
+  display: grid;
+  gap: 7px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.err {
+  margin: 0;
+  color: #d00;
+  font-size: 14px;
+}
+
+.delivery button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.empty-state {
+  padding: 20px;
+  text-align: center;
+}
