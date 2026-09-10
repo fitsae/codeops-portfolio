@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Campus Library",
+    "category": "Library",
+    "description": "Access books, research materials, digital resources, and study spaces.",
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "name": "Academic Support Center",
+    "category": "Academic Support",
+    "description": "Get tutoring, study assistance, and academic guidance.",
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "name": "Career Services",
+    "category": "Career Services",
+    "description": "Find internships, career advice, job opportunities, and CV support.",
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "name": "Student Services",
+    "category": "Student Services",
+    "description": "Access student support, registration information, and campus services.",
+    "link": "#"
+  }
+]

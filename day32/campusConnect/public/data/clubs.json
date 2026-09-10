@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Computer Science Club",
+    "description": "A community for students interested in programming, software development, AI, and technology.",
+    "category": "Technology",
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
+    "meetingDay": "Every Tuesday",
+    "meetingTime": "4:00 PM - 6:00 PM",
+    "location": "Computer Lab 2",
+    "members": 85,
+    "interests": ["Programming", "AI", "Web Development", "Cybersecurity"]
+  },
+  {
+    "id": 2,
+    "name": "Photography Club",
+    "description": "Students who enjoy photography, visual storytelling, editing, and creative media.",
+    "category": "Arts",
+    "image": "https://images.unsplash.com/photo-1452780212940-6f5c0d14d848",
+    "meetingDay": "Every Thursday",
+    "meetingTime": "3:00 PM - 5:00 PM",
+    "location": "Media Center",
+    "members": 62,
+    "interests": ["Photography", "Editing", "Portraits", "Street Photography"]
+  },
+  {
+    "id": 3,
+    "name": "Business & Entrepreneurship Club",
+    "description": "A club for students interested in startups, entrepreneurship, leadership, and business.",
+    "category": "Business",
+    "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72",
+    "meetingDay": "Every Monday",
+    "meetingTime": "5:00 PM - 7:00 PM",
+    "location": "Business Hall",
+    "members": 74,
+    "interests": ["Startups", "Business", "Leadership", "Marketing"]
+  },
+  {
+    "id": 4,
+    "name": "Environmental Club",
+    "description": "Students working together to promote environmental awareness and sustainability.",
+    "category": "Environment",
+    "image": "https://images.unsplash.com/photo-1497250681960-ef046c08a56e",
+    "meetingDay": "Every Wednesday",
+    "meetingTime": "2:00 PM - 4:00 PM",
+    "location": "Student Center",
+    "members": 48,
+    "interests": ["Environment", "Recycling", "Sustainability", "Community"]
+  },
+  {
+    "id": 5,
+    "name": "Music Club",
+    "description": "A creative community for students interested in singing, instruments, and music production.",
+    "category": "Arts",
+    "image": "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
+    "meetingDay": "Every Friday",
+    "meetingTime": "4:00 PM - 6:00 PM",
+    "location": "Arts Building",
+    "members": 57,
+    "interests": ["Singing", "Instruments", "Production", "Performance"]
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Campus Technology Day",
+    "date": "September 20, 2026",
+    "time": "10:00 AM - 4:00 PM",
+    "location": "Main Auditorium",
+    "description": "A full day of technology talks, demonstrations, workshops, and student projects.",
+    "organizer": "Computer Science Club",
+    "category": "Technology"
+  },
+  {
+    "id": 2,
+    "name": "Student Photography Exhibition",
+    "date": "September 25, 2026",
+    "time": "2:00 PM - 6:00 PM",
+    "location": "University Gallery",
+    "description": "An exhibition featuring photography created by students across the campus.",
+    "organizer": "Photography Club",
+    "category": "Arts"
+  },
+  {
+    "id": 3,
+    "name": "Startup Pitch Competition",
+    "date": "October 2, 2026",
+    "time": "9:00 AM - 3:00 PM",
+    "location": "Business Hall",
+    "description": "Student entrepreneurs present their startup ideas to a panel of judges.",
+    "organizer": "Business & Entrepreneurship Club",
+    "category": "Business"
+  },
+  {
+    "id": 4,
+    "name": "Campus Green Day",
+    "date": "October 8, 2026",
+    "time": "8:00 AM - 1:00 PM",
+    "location": "Campus Garden",
+    "description": "Students participate in tree planting, recycling, and environmental awareness activities.",
+    "organizer": "Environmental Club",
+    "category": "Environment"
+  },
+  {
+    "id": 5,
+    "name": "Student Music Festival",
+    "date": "October 15, 2026",
+    "time": "4:00 PM - 9:00 PM",
+    "location": "Campus Stadium",
+    "description": "A student music festival featuring performances from student musicians and bands.",
+    "organizer": "Music Club",
+    "category": "Arts"
+  }
+]
