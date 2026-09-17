@@ -1,0 +1,430 @@
+/* =========================
+   Addis Eats - App Styles
+   ========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f8f8f8;
+  color: #222;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* =========================
+   Container
+   ========================= */
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Header
+   ========================= */
+
+.header {
+  background: #222;
+  color: white;
+  padding: 25px 0;
+  margin-bottom: 30px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.header p {
+  margin: 0;
+  color: #ddd;
+}
+
+/* =========================
+   Cart Badge
+   ========================= */
+
+.cart-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  color: #222;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.cart-badge span {
+  background: #e63946;
+  color: white;
+  min-width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.85rem;
+}
+
+/* =========================
+   Menu Controls
+   ========================= */
+
+.menu-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.menu-controls input,
+.menu-controls select {
+  padding: 11px 13px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  outline: none;
+}
+
+.menu-controls input {
+  flex: 1;
+}
+
+.menu-controls input:focus,
+.menu-controls select:focus {
+  border-color: #555;
+}
+
+/* =========================
+   Menu
+   ========================= */
+
+.menu {
+  margin-bottom: 35px;
+}
+
+.menu h2,
+.cart-panel h2,
+.delivery-form h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   Dish List
+   ========================= */
+
+.dish-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.dish-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.dish-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.dish-card p {
+  margin: 7px 0;
+  color: #555;
+}
+
+.dish-card button {
+  margin-top: 15px;
+  padding: 9px 14px;
+  border: none;
+  border-radius: 5px;
+  background: #222;
+  color: white;
+  cursor: pointer;
+}
+
+.dish-card button:hover {
+  background: #444;
+}
+
+/* =========================
+   Spicy Badge
+   ========================= */
+
+.spicy-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #ffe5e5;
+  color: #c62828;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* =========================
+   Cart
+   ========================= */
+
+.cart-panel {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item p {
+  margin: 5px 0 0;
+  color: #666;
+}
+
+.cart-item button {
+  margin-left: 12px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+}
+
+.cart-item button:hover {
+  background: #f2f2f2;
+}
+
+.cart-panel > button {
+  padding: 9px 14px;
+  border: none;
+  border-radius: 5px;
+  background: #e63946;
+  color: white;
+  cursor: pointer;
+}
+
+/* =========================
+   Delivery / Checkout Form
+   ========================= */
+
+.delivery-form {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.delivery-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.delivery-form label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.delivery-form input,
+.delivery-form textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.delivery-form input:focus,
+.delivery-form textarea:focus {
+  border-color: #555;
+}
+
+.delivery-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.delivery-form button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #222;
+  color: white;
+  cursor: pointer;
+}
+
+.delivery-form button:hover:not(:disabled) {
+  background: #444;
+}
+
+.delivery-form button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Error Message
+   ========================= */
+
+.error-message {
+  color: #c62828;
+  background: #ffecec;
+  border: 1px solid #f3b5b5;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+
+@media (max-width: 800px) {
+  .dish-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 94%;
+  }
+
+  .menu-controls {
+    flex-direction: column;
+  }
+
+  .dish-list {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cart-item button {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  .header h1 {
+    font-size: 1.7rem;
+  }
+}
+
+/* add new navigation css */
+
+.main-nav {
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-content {
+  display: flex;
+  gap: 24px;
+  padding: 12px 20px;
+}
+
+.nav-content a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-content a:hover {
+  text-decoration: underline;
+}
+
+.nav-content a.active {
+  text-decoration: underline;
+}
+
+.primary-link,
+.details-link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.primary-link {
+  margin-top: 15px;
+}
+
+.dish-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.dish-actions button {
+  margin: 0;
+}
+
+.home-page,
+.dish-details,
+.signin-page,
+.not-found {
+  padding: 30px 0;
+}
+
+.signin-page form {
+  max-width: 450px;
+}
+
+.signin-page input {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.signin-page button {
+  margin-top: 10px;
+}
