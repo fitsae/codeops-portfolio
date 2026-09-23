@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Doro Wat",
+    "price": 380,
+    "category": "Dinner",
+    "spicy": true
+  },
+  {
+    "id": 2,
+    "name": "Kitfo",
+    "price": 450,
+    "category": "Dinner",
+    "spicy": true
+  },
+  {
+    "id": 3,
+    "name": "Shiro",
+    "price": 200,
+    "category": "Lunch",
+    "spicy": false
+  },
+  {
+    "id": 4,
+    "name": "Tibs",
+    "price": 420,
+    "category": "Dinner",
+    "spicy": true
+  },
+  {
+    "id": 5,
+    "name": "Ful",
+    "price": 150,
+    "category": "Breakfast",
+    "spicy": false
+  },
+  {
+    "id": 6,
+    "name": "Chechebsa",
+    "price": 180,
+    "category": "Breakfast",
+    "spicy": false
+  },
+  {
+    "id": 7,
+    "name": "Buna",
+    "price": 60,
+    "category": "Drinks",
+    "spicy": false
+  },
+  { "id": 8, "name": "Tej", "price": 120, "category": "Drinks", "spicy": false }
+]
