@@ -1,0 +1,754 @@
+/* ============================================================
+   Addis Eats — Final globals.css
+   Plain-CSS shim for the utility classes used in JSX.
+   Covers Days 41–45: menu, search, pagination, cart, checkout,
+   orders, kitchen, sign-in, dish detail, auth nav.
+   ============================================================ */
+
+/* ---------- Reset / base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    var(--font-inter),
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background: #f9fafb;
+  color: #111827;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  transition:
+    opacity 120ms ease,
+    background-color 120ms ease;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+button:not(:disabled):hover {
+  opacity: 0.92;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.9em;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Layout ---------- */
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.max-w-md {
+  max-width: 28rem;
+}
+.max-w-3xl {
+  max-width: 48rem;
+}
+.max-w-6xl {
+  max-width: 72rem;
+}
+
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-1 {
+  flex: 1 1 0%;
+}
+.grid {
+  display: grid;
+}
+.block {
+  display: block;
+}
+.items-center {
+  align-items: center;
+}
+.items-start {
+  align-items: flex-start;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+.gap-4 {
+  gap: 1rem;
+}
+.gap-6 {
+  gap: 1.5rem;
+}
+
+/* ---------- Spacing ---------- */
+.p-4 {
+  padding: 1rem;
+}
+.p-5 {
+  padding: 1.25rem;
+}
+.p-6 {
+  padding: 1.5rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mt-3 {
+  margin-top: 0.75rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mt-6 {
+  margin-top: 1.5rem;
+}
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+.space-y-3 > * + * {
+  margin-top: 0.75rem;
+}
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+/* ---------- Typography ---------- */
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-bold {
+  font-weight: 700;
+}
+
+.underline {
+  text-decoration: underline;
+}
+.text-center {
+  text-align: center;
+}
+
+.text-gray-500 {
+  color: #6b7280;
+}
+.text-gray-600 {
+  color: #4b5563;
+}
+.text-gray-900 {
+  color: #111827;
+}
+.text-red-600 {
+  color: #dc2626;
+}
+.text-green-700 {
+  color: #15803d;
+}
+.text-purple-700 {
+  color: #7e22ce;
+}
+.text-white {
+  color: #ffffff;
+}
+
+/* ---------- Backgrounds ---------- */
+.bg-white {
+  background: #ffffff;
+}
+.bg-gray-50 {
+  background: #f9fafb;
+}
+.bg-purple-600 {
+  background: #9333ea;
+}
+.bg-purple-600:hover:not(:disabled) {
+  background: #7e22ce;
+}
+
+/* ---------- Borders / radius / shadow ---------- */
+.border {
+  border: 1px solid #e5e7eb;
+}
+.border-b {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- Sizing ---------- */
+.w-full {
+  width: 100%;
+}
+.h-40 {
+  height: 10rem;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* ---------- Focus / hover / disabled ---------- */
+.outline-none:focus {
+  outline: none;
+}
+
+.focus\:ring-2:focus {
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.35);
+  border-color: #9333ea;
+}
+
+.hover\:underline:hover {
+  text-decoration: underline;
+}
+
+.disabled\:opacity-50:disabled {
+  opacity: 0.5;
+}
+
+/* ---------- Responsive grids ---------- */
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ============================================================
+   Component polish (things utility classes can't express well)
+   ============================================================ */
+
+/* Header nav row — keeps badge + auth cluster on the right */
+header.border-b nav {
+  min-height: 3.5rem;
+}
+
+/* Dish cards — image sits flush against the rounded top */
+.dish-card-image {
+  margin: -1.25rem -1.25rem 0.75rem -1.25rem;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  overflow: hidden;
+}
+.dish-card-image img {
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dish detail hero image */
+main img {
+  border-radius: 0.5rem;
+}
+
+/* Cart badge link gets a subtle hover */
+header a[href="/cart"]:hover {
+  background: #f3f4f6;
+}
+
+/* Sign out button in header stays compact */
+header form button {
+  background: transparent;
+  border-color: #e5e7eb;
+  color: #374151;
+}
+header form button:hover:not(:disabled) {
+  background: #f3f4f6;
+  opacity: 1;
+}
+
+/* Search input inside menu — slightly taller, purple focus ring */
+input[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Prevent long descriptions from breaking the grid */
+.dish-card p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Loading skeleton — used in Day 41 menu loading state */
+.skeleton {
+  background: linear-gradient(90deg, #eee 25%, #f5f5f5 50%, #eee 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite linear;
+  border-radius: 6px;
+  height: 18px;
+  margin-bottom: 12px;
+}
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Error boundary fallback */
+.error-boundary {
+  border: 1px solid #f3b5b5;
+  background: #ffecec;
+  color: #7a1f1f;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+}
+.error-boundary__msg {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.9em;
+}
+.home,
+.tracking-page {
+  width: min(1100px, 100% - 32px);
+  margin: 40px auto;
+}
+
+.home {
+  padding: 32px;
+  background: white;
+  border-radius: 16px;
+}
+
+.home a {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 18px;
+  background: #7c3aed;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.tracking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.panel {
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #23243a0d;
+}
+
+.map-placeholder {
+  height: 360px;
+  border-radius: 10px;
+  background: #e7e8f2;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+button,
+input {
+  padding: 10px;
+  margin: 5px 5px 5px 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .tracking-grid {
+    grid-template-columns: 1fr;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f8f9ff;
+  color: #23243a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrap {
+  width: min(1100px, 100% - 32px);
+  margin: 40px auto;
+}
+
+.home,
+.tracking-page {
+  width: min(1100px, 100% - 32px);
+  margin: 40px auto;
+}
+
+.home {
+  padding: 32px;
+  background: white;
+  border-radius: 16px;
+}
+
+.panel {
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #23243a0d;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 700px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tracking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 700px) {
+  .tracking-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.map-placeholder {
+  height: 360px;
+  border-radius: 10px;
+  background: #e7e8f2;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: #eef0f8;
+  font-size: 12px;
+}
+.live {
+  background: #dcfce7;
+  color: #166534;
+}
+.reconnecting {
+  background: #fef9c3;
+  color: #854d0e;
+}
+.delivered {
+  background: #dcfce7;
+  color: #166534;
+}
+.connecting {
+  background: #eef0f8;
+  color: #475569;
+}
+
+.muted {
+  color: #64748b;
+  font-size: 14px;
+}
+.error {
+  color: #b91c1c;
+}
+
+/* ---------------------------------------------------------------- */
+/* Day 48 — real controls, focus visible, touch targets, buttons     */
+/* ---------------------------------------------------------------- */
+
+button,
+input,
+a.btn-primary {
+  font: inherit;
+}
+
+/* 44px minimum touch target */
+button,
+.btn-primary,
+input[type="submit"] {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #7c3aed;
+  color: white;
+  text-decoration: none;
+  border: 1px solid #6d28d9;
+}
+.btn-primary:hover {
+  background: #6d28d9;
+}
+
+.btn-secondary {
+  background: white;
+  color: #23243a;
+  border: 1px solid #cbd5e1;
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* Visible focus outline — required for keyboard users */
+:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Never remove the ring entirely */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+input,
+input[type="tel"],
+input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  margin: 6px 0 12px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #eef0f8;
+  text-align: left;
+}
+td.num,
+th.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
